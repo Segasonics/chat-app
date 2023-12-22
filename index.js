@@ -8,7 +8,8 @@ const PORT =process.env.PORT || 5000;
 require('dotenv').config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken =process.env.TWILIO_AUTH_TOKEN;
-const twilioClient =require('twilio')(accountSid,authToken);
+const username = 'your_username'; // Add this line if required
+const client = require('twilio')(accountSid, authToken, { username })
 
 app.use(cors());
 app.use(express.json());
