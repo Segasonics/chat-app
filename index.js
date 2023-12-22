@@ -9,7 +9,8 @@ require('dotenv').config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken =process.env.TWILIO_AUTH_TOKEN;
 const username = 'your_username'; // Add this line if required
-const client = require('twilio')(accountSid, authToken, { username })
+const twilioClient  = require('twilio')(accountSid, authToken, { username });
+
 
 app.use(cors());
 app.use(express.json());
@@ -39,7 +40,7 @@ app.post('/',(req,res)=>{
         })
         res.status(200).send('Message Sent')
     }
-    return res.status(200).send('Message received')
+    return res.status(200).send('Message')
 });
 app.use('/auth',authRoutes)
 
