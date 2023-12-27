@@ -8,9 +8,9 @@ const PORT = process.env.PORT || 5000;
 
 require('dotenv').config();
 
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const messagingServiceSid = process.env.TWILIO_MESSAGING_SERVICE_SID;
+// const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// const authToken = process.env.TWILIO_AUTH_TOKEN;
+// const messagingServiceSid = process.env.TWILIO_MESSAGING_SERVICE_SID;
 //const twilioClient = require('twilio')(accountSid, authToken);
 
 app.use(cors());
@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
 
-app.post('/', (req, res) => {
+//app.post('/', (req, res) => {
 //     const { message, user: sender, type, members } = req.body;
 
 //     if(type === 'message.new') {
@@ -43,7 +43,7 @@ app.post('/', (req, res) => {
 //     }
 
 //     return res.status(200).send('Not a new message request');
- });
+ //});
 
 app.use('/auth', authRoutes);
 
